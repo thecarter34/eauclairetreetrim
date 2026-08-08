@@ -1,30 +1,48 @@
 /* =========================================
-   EAU CLAIRE TREE REMOVALS — STYLE
-   Clean, warm, professional
+   EAU CLAIRE TREE TRIMMING — STYLE
+   Navy + Gold system (matches truck signage)
+   Re-skinned 2026-08-08
    ========================================= */
 
 /* --- CUSTOM PROPERTIES --- */
 :root {
-  /* Colors */
-  --green-dark: #1a4d1a;
-  --green-mid: #2d5a27;
-  --green-light: #3d7a35;
-  --brown-dark: #5C3D1E;
-  --brown-mid: #8B5E3C;
-  --brown-light: #c4844a;
-  --cream: #f5f2ed;
-  --cream-dark: #edebe6;
-  --cream-darker: #e0dbd3;
-  --text-dark: #1a1a1a;
-  --text-mid: #4a4a4a;
-  --text-light: #f5f2ed;
-  --black: #0f0f0f;
-  --white: #ffffff;
-  --error: #c0392b;
+  /* Colors — extracted from truck logo (see /workspace/clients/rick-olson/eau_claire_tree_service/logo.png) */
+  --black:        #0a0a0a;
+  --dark-800:     #0f1623;
+  --dark-700:     #1a2536;
+  --navy:         #1a2a4a;
+  --navy-light:   #243656;
+  --navy-dark:    #131f3a;
+  --gold:         #c9a84c;
+  --gold-light:   #d4bc6a;
+  --gold-dark:    #a8893a;
+  --gold-glow:    rgba(201,168,76,0.35);
+  --green:        #2D5A27;
+  --green-light:  #3a7033;
+  --cream:        #F2EBD9;
+  --cream-soft:   #f7f0e3;
+  --cream-dark:   #e8e0c9;
+  --cream-darker: #d8cfb6;
 
-  /* Typography */
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-body: 'Source Sans 3', system-ui, sans-serif;
+  /* Backward-compat aliases (older rules still reference these) */
+  --text-dark:    #0f1623;
+  --text-mid:     #4a4a4a;
+  --text-light:   var(--cream);
+  --white:        #ffffff;
+  --error:        #c0392b;
+  /* Greens kept for accent/icon use only */
+  --green-dark:   #1f3f1a;
+  --green-mid:    #2D5A27;
+  --green-accent: #3a7033;
+  /* Brown retired — replaced by gold */
+  --brown-dark:   #a8893a;
+  --brown-mid:    #c9a84c;
+  --brown-light:  #d4bc6a;
+
+  /* Typography — Great Vibes + Barlow Condensed + DM Sans (matches canon) */
+  --font-script:   'Great Vibes', cursive;
+  --font-display:  'Barlow Condensed', sans-serif;
+  --font-body:     'DM Sans', system-ui, sans-serif;
 
   /* Spacing scale */
   --space-1: 0.5rem;
@@ -47,11 +65,11 @@
   --radius-lg: 16px;
   --radius-full: 9999px;
 
-  /* Shadows — tinted to match warm palette */
-  --shadow-sm: 0 1px 3px rgba(92, 61, 30, 0.08), 0 1px 2px rgba(92, 61, 30, 0.06);
-  --shadow-md: 0 4px 12px rgba(92, 61, 30, 0.10), 0 2px 6px rgba(92, 61, 30, 0.08);
-  --shadow-lg: 0 12px 40px rgba(26, 77, 26, 0.15), 0 4px 12px rgba(26, 77, 26, 0.10);
-  --shadow-xl: 0 24px 64px rgba(26, 77, 26, 0.20);
+  /* Shadows — navy-tinted, with gold glow option */
+  --shadow-sm: 0 1px 3px rgba(26, 42, 74, 0.10), 0 1px 2px rgba(26, 42, 74, 0.08);
+  --shadow-md: 0 4px 12px rgba(26, 42, 74, 0.12), 0 2px 6px rgba(26, 42, 74, 0.10);
+  --shadow-lg: 0 12px 40px rgba(26, 42, 74, 0.20), 0 4px 12px rgba(26, 42, 74, 0.12);
+  --shadow-xl: 0 24px 64px rgba(26, 42, 74, 0.25);
 
   /* Transitions */
   --transition-fast: 150ms ease;
