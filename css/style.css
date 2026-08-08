@@ -17,8 +17,9 @@
   --gold-light:   #d4bc6a;
   --gold-dark:    #a8893a;
   --gold-glow:    rgba(201,168,76,0.35);
-  --green:        #2D5A27;
-  --green-light:  #3a7033;
+  /* Repurpose green tokens to navy/gold for truck-signage system */
+  --green:        var(--navy);        /* was #2D5A27 */
+  --green-light:  var(--gold);        /* was #3a7033 */
   --cream:        #F2EBD9;
   --cream-soft:   #f7f0e3;
   --cream-dark:   #e8e0c9;
@@ -30,14 +31,19 @@
   --text-light:   var(--cream);
   --white:        #ffffff;
   --error:        #c0392b;
-  /* Greens kept for accent/icon use only */
-  --green-dark:   #1f3f1a;
-  --green-mid:    #2D5A27;
-  --green-accent: #3a7033;
-  /* Brown retired — replaced by gold */
-  --brown-dark:   #a8893a;
-  --brown-mid:    #c9a84c;
-  --brown-light:  #d4bc6a;
+  /* Greens REPURPOSED — now navy/gold tones for the truck-signage system.
+     Old code referencing --green-dark / --green-mid / --green-light / --green
+     now gets navy + gold to match the truck signage. */
+  --green-dark:   var(--navy-dark);
+  --green-mid:    var(--navy);
+  --green-accent: var(--navy-light);
+  --green-light:  var(--gold);
+  --green:        var(--navy);
+  /* Browns REPURPOSED — gold tones. */
+  --brown-dark:   var(--gold-dark);
+  --brown-mid:    var(--gold);
+  --brown-light:  var(--gold-light);
+  --brown:        var(--gold);
 
   /* Typography — Great Vibes + Barlow Condensed + DM Sans (matches canon) */
   --font-script:   'Great Vibes', cursive;
@@ -510,7 +516,7 @@ ul, ol { list-style: none; }
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #f5c088;
+  color: var(--gold);
   margin-bottom: var(--space-3);
   display: inline-block;
   text-shadow: 0 2px 10px rgba(0,0,0,0.85);
@@ -1048,8 +1054,8 @@ section { padding: var(--space-10) 0 calc(var(--space-10) * 1.25); }
 }
 
 .area-card {
-  background: #2a5a2a;
-  border: 1px solid rgba(245,242,237,0.15);
+  background: var(--navy);
+  border: 1px solid rgba(242,235,217,0.15);
   border-radius: var(--radius-lg);
   padding: var(--space-4) var(--space-3);
   display: flex;
@@ -1060,8 +1066,8 @@ section { padding: var(--space-10) 0 calc(var(--space-10) * 1.25); }
   transition: background var(--transition-fast), border-color var(--transition-fast), transform var(--transition-spring);
 }
 .area-card:hover {
-  background: #326632;
-  border-color: rgba(245,242,237,0.3);
+  background: var(--navy-light);
+  border-color: rgba(242,235,217,0.3);
   transform: translateY(-4px);
 }
 
@@ -1325,6 +1331,38 @@ section { padding: var(--space-10) 0 calc(var(--space-10) * 1.25); }
   padding: calc(68px + var(--space-6)) var(--gutter) calc(var(--space-8) + 24px);
   width: 100%;
 }
+
+/* ---- Wordmark (truck-signage: Eau Claire / TREE TRIMMING) ---- */
+.hero-logo {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: var(--space-4);
+  line-height: 1;
+}
+.hero-logo-eau {
+  font-family: var(--font-script);
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--gold);
+  margin-bottom: 2px;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.5), 0 2px 4px rgba(0,0,0,0.3);
+}
+.hero-logo-tree {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5.5vw, 4rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #ffffff;
+  line-height: 0.95;
+  text-shadow:
+    0 0 14px var(--gold-glow),
+    0 0 6px rgba(201,168,76,0.9),
+    0 2px 6px rgba(0,0,0,0.35);
+}
+/* In the header (dark background, smaller) */
+.site-header .hero-logo-eau { color: var(--gold); font-size: 1.05rem; }
+.site-header .hero-logo-tree { color: var(--cream); font-size: 1.15rem; }
 
 .page-hero .hero-headline {
   font-size: clamp(2rem, 5vw, 3.5rem);
