@@ -1192,7 +1192,7 @@ section { padding: var(--space-10) 0 calc(var(--space-10) * 1.25); }
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.35);
+  color: #b4b4b4;
   margin-bottom: 4px;
 }
 
@@ -1215,7 +1215,7 @@ section { padding: var(--space-10) 0 calc(var(--space-10) * 1.25); }
 }
 .footer-bottom p {
   font-size: 0.82rem;
-  color: rgba(255,255,255,0.3);
+  color: #b4b4b4;
 }
 
 /* Parent brand attribution — links to EauClaireTreeService.com (the hub of the four-site architecture) */
@@ -1227,7 +1227,7 @@ section { padding: var(--space-10) 0 calc(var(--space-10) * 1.25); }
 }
 .parent-brand-footer p {
   font-size: 0.82rem;
-  color: rgba(255,255,255,0.4);
+  color: #b4b4b4;
   letter-spacing: 0.02em;
 }
 .parent-brand-footer a {
@@ -1588,5 +1588,17 @@ section { padding: var(--space-10) 0 calc(var(--space-10) * 1.25); }
   .faq-icon {
     width: 28px;
     height: 28px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION (accessibility)
+   ========================================= */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
