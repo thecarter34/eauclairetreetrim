@@ -349,7 +349,7 @@ ul, ol { list-style: none; }
 .drawer-logo {
   display: flex;
   align-items: center;
-  padding: 4px 10px;
+  padding: 6px 12px;
   background: var(--cream);
   border-radius: var(--radius-sm);
   border: 1px solid rgba(201, 168, 76, 0.3);
@@ -1488,6 +1488,12 @@ section { padding: var(--space-10) 0 calc(var(--space-10) * 1.25); }
   }
   .site-header .hero-logo-eau { font-size: 0.95rem; }
   .site-header .hero-logo-tree { font-size: 1rem; }
+  /* Drawer: also shrink on mobile (matches mobile header) */
+  .drawer-logo {
+    padding: 4px 10px;
+  }
+  .drawer-logo .hero-logo-eau { font-size: 0.95rem; }
+  .drawer-logo .hero-logo-tree { font-size: 1rem; }
 }
 
 .footer-logo .hero-logo {
@@ -1524,26 +1530,17 @@ section { padding: var(--space-10) 0 calc(var(--space-10) * 1.25); }
 }
 .drawer-logo .hero-logo-eau {
   color: var(--navy-dark);
-  font-size: 1.25rem;
-  line-height: 1.15;
+  font-size: 1.05rem;
+  line-height: 1.2;
   text-shadow: none;
 }
 .drawer-logo .hero-logo-tree {
   color: var(--navy-dark);
-  font-size: 1.1rem;
-  line-height: 1.05;
-  letter-spacing: 0.04em;
+  font-size: 1.15rem;
+  line-height: 1.1;
+  letter-spacing: 0;
   -webkit-text-stroke: 0.5px var(--gold);
   text-shadow: none;
-}
-
-.drawer-logo {
-  display: flex;
-  align-items: center;
-  padding: 4px 10px;
-  background: var(--cream);
-  border-radius: var(--radius-sm);
-  border: 1px solid rgba(201, 168, 76, 0.3);
 }
 
 .page-hero .hero-headline {
