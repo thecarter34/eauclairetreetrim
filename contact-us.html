@@ -152,7 +152,7 @@
 
     <section class="page-hero">
       <div class="hero-media">
-        <img src="images/hero/hero-western-wi-1920w.jpg" alt="Mature trees in a Chippewa Valley Wisconsin farm property" class="hero-img" loading="eager">
+        <img src="images/hero/hero-western-wi-1920w.jpg" srcset="images/hero/hero-western-wi-640w.jpg 640w, images/hero/hero-western-wi-1920w.jpg 1920w" sizes="100vw" alt="Mature trees in a Chippewa Valley Wisconsin farm property" class="hero-img" loading="eager" fetchpriority="high">
         <div class="hero-overlay"></div>
       </div>
       <div class="hero-content">
@@ -194,7 +194,7 @@
     </section>
 
     <!-- SERVICE AREAS -->
-    <section class="areas-section" style="padding-top:0">
+    <section class="areas-section">
       <div class="section-container">
         <div class="section-header">
           <p class="section-label">Coverage</p>
@@ -202,18 +202,20 @@
           <p class="section-desc">We serve homeowners and property owners throughout the Chippewa Valley and Western Wisconsin.</p>
         </div>
         <div class="areas-grid">
-          <div class="area-card">
+          <a href="eau-claire.html" class="area-card">
             <div class="area-pin">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="28" height="28"><path fill="#c9a84c" d="M128 64a40 40 0 1 0 40 40a40 40 0 0 0-40-40m0 64a24 24 0 1 1 24-24a24 24 0 0 1-24 24m0-112a88.1 88.1 0 0 0-88 88c0 31.4 14.51 64.68 42 96.25a254.2 254.2 0 0 0 41.45 38.3a8 8 0 0 0 9.18 0a254.2 254.2 0 0 0 41.37-38.3c27.45-31.57 42-64.85 42-96.25a88.1 88.1 0 0 0-88-88m0 206c-16.53-13-72-60.75-72-118a72 72 0 0 1 144 0c0 57.23-55.47 105-72 118"/></svg>
             </div>
             <h3 class="area-name">Eau Claire</h3>
-          </div>
-          <div class="area-card">
+            <span class="area-link">View area &rarr;</span>
+          </a>
+          <a href="chippewa-falls.html" class="area-card">
             <div class="area-pin">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="28" height="28"><path fill="#c9a84c" d="M128 64a40 40 0 1 0 40 40a40 40 0 0 0-40-40m0 64a24 24 0 1 1 24-24a24 24 0 0 1-24 24m0-112a88.1 88.1 0 0 0-88 88c0 31.4 14.51 64.68 42 96.25a254.2 254.2 0 0 0 41.45 38.3a8 8 0 0 0 9.18 0a254.2 254.2 0 0 0 41.37-38.3c27.45-31.57 42-64.85 42-96.25a88.1 88.1 0 0 0-88-88m0 206c-16.53-13-72-60.75-72-118a72 72 0 0 1 144 0c0 57.23-55.47 105-72 118"/></svg>
             </div>
             <h3 class="area-name">Chippewa Falls</h3>
-          </div>
+            <span class="area-link">View area &rarr;</span>
+          </a>
           <div class="area-card">
             <div class="area-pin">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="28" height="28"><path fill="#c9a84c" d="M128 64a40 40 0 1 0 40 40a40 40 0 0 0-40-40m0 64a24 24 0 1 1 24-24a24 24 0 0 1-24 24m0-112a88.1 88.1 0 0 0-88 88c0 31.4 14.51 64.68 42 96.25a254.2 254.2 0 0 0 41.45 38.3a8 8 0 0 0 9.18 0a254.2 254.2 0 0 0 41.37-38.3c27.45-31.57 42-64.85 42-96.25a88.1 88.1 0 0 0-88-88m0 206c-16.53-13-72-60.75-72-118a72 72 0 0 1 144 0c0 57.23-55.47 105-72 118"/></svg>
@@ -243,13 +245,13 @@
     </section>
 
     <!-- WHAT TO EXPECT -->
-    <section class="why-section" style="padding-top:0">
+    <section class="why-section">
       <div class="section-container">
         <div class="section-header">
           <p class="section-label">What Happens Next</p>
           <h2 class="section-title">What to Expect</h2>
         </div>
-        <div class="trust-bar" style="margin-bottom: 3rem;">
+        <div class="trust-bar trust-bar--inset">
           <div class="trust-inner">
             <div class="trust-stat">
               <span class="trust-num">Free</span>
@@ -272,32 +274,32 @@
             </div>
           </div>
         </div>
-        <div class="services-grid" style="max-width:900px;margin:0 auto;">
-          <div class="service-card" style="cursor:default">
-            <div class="service-card-body" style="padding:2rem">
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-card-body">
               <div class="service-num">01</div>
-              <h3 class="service-name" style="margin-bottom:0.75rem">Initial Contact</h3>
+              <h3 class="service-name">Initial Contact</h3>
               <p class="service-desc">Call or text (715) 579-1942. Tell us about your trees, your property address, and what you're hoping to accomplish. Rick answers his own phone — no receptionists, no voicemail runaround.</p>
             </div>
           </div>
-          <div class="service-card" style="cursor:default">
-            <div class="service-card-body" style="padding:2rem">
+          <div class="service-card">
+            <div class="service-card-body">
               <div class="service-num">02</div>
-              <h3 class="service-name" style="margin-bottom:0.75rem">Free On-Site Assessment</h3>
+              <h3 class="service-name">Free On-Site Assessment</h3>
               <p class="service-desc">If the work requires it, we'll schedule a free on-site visit. Rick walks the property with you, assesses each tree, explains what he sees, and discusses your options. No hard sell — just an honest assessment of what your trees need.</p>
             </div>
           </div>
-          <div class="service-card" style="cursor:default">
-            <div class="service-card-body" style="padding:2rem">
+          <div class="service-card">
+            <div class="service-card-body">
               <div class="service-num">03</div>
-              <h3 class="service-name" style="margin-bottom:0.75rem">Honest Estimate</h3>
+              <h3 class="service-name">Honest Estimate</h3>
               <p class="service-desc">After the assessment, Rick gives you a straightforward price estimate. He explains what's included, what the timeline looks like, and what you can expect. The price we quote is the price you pay — no surprises when the invoice arrives.</p>
             </div>
           </div>
-          <div class="service-card" style="cursor:default">
-            <div class="service-card-body" style="padding:2rem">
+          <div class="service-card">
+            <div class="service-card-body">
               <div class="service-num">04</div>
-              <h3 class="service-name" style="margin-bottom:0.75rem">Work Scheduled &amp; Completed</h3>
+              <h3 class="service-name">Work Scheduled &amp; Completed</h3>
               <p class="service-desc">Once you approve the estimate, we schedule the work at a time that works for you. We show up on time, do the job carefully and completely, and clean up when we're done. Your property is left neat.</p>
             </div>
           </div>
@@ -305,33 +307,8 @@
       </div>
     </section>
 
-    <!-- SOCIAL PROOF -->
-    <section class="trust-bar">
-      <div class="trust-inner">
-        <div class="trust-stat">
-          <span class="trust-num">20+</span>
-          <span class="trust-label">Years Experience</span>
-        </div>
-        <div class="trust-divider"></div>
-        <div class="trust-stat">
-          <span class="trust-num">Licensed</span>
-          <span class="trust-label">&amp; Insured</span>
-        </div>
-        <div class="trust-divider"></div>
-        <div class="trust-stat">
-          <span class="trust-num">Free</span>
-          <span class="trust-label">Assessments</span>
-        </div>
-        <div class="trust-divider"></div>
-        <div class="trust-stat">
-          <span class="trust-num">Chippewa</span>
-          <span class="trust-label">Valley</span>
-        </div>
-      </div>
-    </section>
-
     <!-- FAQ -->
-    <section class="faq-section" style="padding-top:0">
+    <section class="faq-section">
       <div class="section-container">
         <div class="section-header">
           <p class="section-label">Common Questions</p>

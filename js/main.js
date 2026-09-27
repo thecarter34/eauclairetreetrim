@@ -1,5 +1,5 @@
 /* =========================================
-   EAU CLAIRE TREE REMOVALS — MAIN JS
+   EAU CLAIRE TREE TRIMMING — MAIN JS
    ========================================= */
 
 (function () {
@@ -33,6 +33,7 @@
     hamburgerBtn.classList.add('is-open');
     hamburgerBtn.setAttribute('aria-expanded', 'true');
     drawer.setAttribute('aria-hidden', 'false');
+    drawer.inert = false;
     document.body.style.overflow = 'hidden';
     // Focus the close button for accessibility
     closeBtn && closeBtn.focus();
@@ -45,6 +46,7 @@
     hamburgerBtn.classList.remove('is-open');
     hamburgerBtn.setAttribute('aria-expanded', 'false');
     drawer.setAttribute('aria-hidden', 'true');
+    drawer.inert = true;
     document.body.style.overflow = '';
   }
 
@@ -52,6 +54,9 @@
     if (!drawer) return;
     drawer.classList.contains('is-open') ? closeDrawer() : openDrawer();
   }
+
+  // Keep the off-screen drawer out of the tab order until it opens
+  if (drawer) drawer.inert = true;
 
   if (hamburgerBtn) hamburgerBtn.addEventListener('click', toggleDrawer);
   if (closeBtn)     closeBtn.addEventListener('click', closeDrawer);

@@ -152,7 +152,7 @@
 
     <section class="page-hero">
       <div class="hero-media">
-        <img src="images/hero/service-health-1920w.jpg" alt="Hands examining tree leaves for tree health inspection" class="hero-img" loading="eager">
+        <img src="images/hero/service-health-1920w.jpg" srcset="images/hero/service-health-640w.jpg 640w, images/hero/service-health-1920w.jpg 1920w" sizes="100vw" alt="Hands examining tree leaves for tree health inspection" class="hero-img" loading="eager" fetchpriority="high">
         <div class="hero-overlay"></div>
       </div>
       <div class="hero-content">
@@ -171,8 +171,8 @@
           <p class="section-label">What We Offer</p>
           <h2 class="section-title">Tree Health &amp; Care Services</h2>
         </div>
-        <div class="services-grid" style="max-width:1100px;margin:0 auto;">
-          <div class="service-card" style="cursor:default">
+        <div class="services-grid services-grid--4up">
+          <div class="service-card">
             <div class="service-card-media">
               <img src="images/hero/service-health-640w.jpg" alt="Hands examining tree leaves" loading="lazy">
               <div class="service-card-overlay"></div>
@@ -183,9 +183,9 @@
               <p class="service-desc">Fungal infections, bacterial diseases, and environmental stress can all affect tree health. We identify the problem and explain your options.</p>
             </div>
           </div>
-          <div class="service-card" style="cursor:default">
+          <div class="service-card">
             <div class="service-card-media">
-              <img src="images/hero/service-crown-640w.jpg" alt="Tree with sparse thinned canopy" loading="lazy">
+              <img src="images/hero/service-crown-640w.jpg" alt="Deciduous tree with an open crown against a blue sky" loading="lazy">
               <div class="service-card-overlay"></div>
             </div>
             <div class="service-card-body">
@@ -194,9 +194,9 @@
               <p class="service-desc">Once we know what we're dealing with, we create a targeted treatment plan. Some conditions respond well to treatment; others require ongoing management.</p>
             </div>
           </div>
-          <div class="service-card" style="cursor:default">
+          <div class="service-card">
             <div class="service-card-media">
-              <img src="images/hero/service-trimming-alt-640w.jpg" alt="Pruning a tree branch from a ladder"Fresh new growth emerging from a properly pruned tree branch" loading="lazy">
+              <img src="images/hero/service-trimming-alt-640w.jpg" alt="Arborist on a ladder tending a young tree in a residential yard" loading="lazy">
               <div class="service-card-overlay"></div>
             </div>
             <div class="service-card-body">
@@ -205,9 +205,9 @@
               <p class="service-desc">Deep root fertilization, soil amendment, and nutrient supplementation help trees recover from stress and maintain vigorous growth.</p>
             </div>
           </div>
-          <div class="service-card" style="cursor:default">
+          <div class="service-card">
             <div class="service-card-media">
-              <img src="images/hero/service-pruning-640w.jpg" alt="Stump grinder removing a tree stump" loading="lazy">
+              <img src="images/stock/pexels-oak-640w.jpg" alt="Mature tree with a broad, healthy canopy" loading="lazy">
               <div class="service-card-overlay"></div>
             </div>
             <div class="service-card-body">
@@ -233,7 +233,7 @@
                 <span class="why-insured-sub">Complete peace of mind for your property</span>
               </div>
             </div>
-            <div class="why-insured-badge" style="margin-top: 1rem;">
+            <div class="why-insured-badge">
               <div class="why-insured-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.8" width="36" height="36"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
               </div>
@@ -242,7 +242,7 @@
                 <span class="why-insured-sub">Proudly serving Western Wisconsin homeowners</span>
               </div>
             </div>
-            <div class="why-insured-badge" style="margin-top: 1rem;">
+            <div class="why-insured-badge">
               <div class="why-insured-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.8" width="36" height="36"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
               </div>
@@ -315,18 +315,20 @@
           <p class="section-desc">Professional tree health care throughout the Chippewa Valley and surrounding communities.</p>
         </div>
         <div class="areas-grid">
-          <div class="area-card">
+          <a href="eau-claire.html" class="area-card">
             <div class="area-pin">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="28" height="28"><path fill="#c9a84c" d="M128 64a40 40 0 1 0 40 40a40 40 0 0 0-40-40m0 64a24 24 0 1 1 24-24a24 24 0 0 1-24 24m0-112a88.1 88.1 0 0 0-88 88c0 31.4 14.51 64.68 42 96.25a254.2 254.2 0 0 0 41.45 38.3a8 8 0 0 0 9.18 0a254.2 254.2 0 0 0 41.37-38.3c27.45-31.57 42-64.85 42-96.25a88.1 88.1 0 0 0-88-88m0 206c-16.53-13-72-60.75-72-118a72 72 0 0 1 144 0c0 57.23-55.47 105-72 118"/></svg>
             </div>
             <h3 class="area-name">Eau Claire</h3>
-          </div>
-          <div class="area-card">
+            <span class="area-link">View area &rarr;</span>
+          </a>
+          <a href="chippewa-falls.html" class="area-card">
             <div class="area-pin">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="28" height="28"><path fill="#c9a84c" d="M128 64a40 40 0 1 0 40 40a40 40 0 0 0-40-40m0 64a24 24 0 1 1 24-24a24 24 0 0 1-24 24m0-112a88.1 88.1 0 0 0-88 88c0 31.4 14.51 64.68 42 96.25a254.2 254.2 0 0 0 41.45 38.3a8 8 0 0 0 9.18 0a254.2 254.2 0 0 0 41.37-38.3c27.45-31.57 42-64.85 42-96.25a88.1 88.1 0 0 0-88-88m0 206c-16.53-13-72-60.75-72-118a72 72 0 0 1 144 0c0 57.23-55.47 105-72 118"/></svg>
             </div>
             <h3 class="area-name">Chippewa Falls</h3>
-          </div>
+            <span class="area-link">View area &rarr;</span>
+          </a>
           <div class="area-card">
             <div class="area-pin">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="28" height="28"><path fill="#c9a84c" d="M128 64a40 40 0 1 0 40 40a40 40 0 0 0-40-40m0 64a24 24 0 1 1 24-24a24 24 0 0 1-24 24m0-112a88.1 88.1 0 0 0-88 88c0 31.4 14.51 64.68 42 96.25a254.2 254.2 0 0 0 41.45 38.3a8 8 0 0 0 9.18 0a254.2 254.2 0 0 0 41.37-38.3c27.45-31.57 42-64.85 42-96.25a88.1 88.1 0 0 0-88-88m0 206c-16.53-13-72-60.75-72-118a72 72 0 0 1 144 0c0 57.23-55.47 105-72 118"/></svg>
@@ -362,7 +364,7 @@
       </div>
       <div class="cta-band-content">
         <h2 class="cta-headline">Concerned About Your Tree's Health?</h2>
-        <p class="cta-sub">Call (715) 579-1942 for a free assessment. We'll assess your trees and create a pruning plan that fits your property.</p>
+        <p class="cta-sub">Call (715) 579-1942 for a free assessment. We'll look at what's going on and put together a care plan for your trees.</p>
         <div class="cta-actions">
           <a href="tel:+17155791942" class="btn btn-primary btn-lg">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22">
