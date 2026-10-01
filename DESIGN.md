@@ -1,14 +1,14 @@
 # DESIGN.md — Eau Claire Tree Trimming
 
-**Mode:** NEW (per `web-design` skill)
+**Mode:** SHIPPED (per `web-design` skill)
 **Created:** 2026-08-08
-**Build status:** Asset prep complete. Subagent build kickoff ready.
+**Last updated:** 2026-10-01 (token system correction + canonical phone swap + design parity with removals)
 
 ---
 
 ## Design Read (declared aloud)
 
-> "Reading this as: local service microsite for homeowners researching tree care, with a **quiet-authority language** (forest greens, professional serif headlines, restrained motion), leaning toward the **Eau Claire Tree Removals design family** but with its own **trim/care-specific character**."
+> "Reading this as: local service microsite for homeowners researching tree care, with a **quiet-authority language** (navy + gold truck-signage brand system, Great Vibes + Barlow Condensed + DM Sans typography, restrained motion), aligned to the **Eau Claire Tree Removals design family** with its own **trim/care-specific editorial voice**."
 
 ---
 
@@ -46,12 +46,15 @@
 
 | | Removals | Trim/Care (this) |
 |---|---|---|
-| **Voice** | Urgent, emergency, "we show up fast" | Calm, proactive, "we keep your trees healthy" |
+| **Voice** | Craft, "done right", permanence | Calm, proactive, "we keep your trees healthy" |
 | **Hero** | Storm damage, hazard tree | Healthy mature tree in manicured yard |
+| **H1 (homepage)** | "Done right. Done safely." (synced 2026-10-01) | "Healthy trees. Year after year." |
 | **CTA** | "Call Now — Free Estimate" | "Call Now" (direct, no qualification) |
 | **Hours** | 24/7 (emergency work) | None (proactive work, no urgency) |
-| **Stats** | 47+ years, 24/7, 100% free estimates | 20+ years, licensed/insured, free consultations, Chippewa Valley |
-| **Trust signal** | Rick's direct phone, 24/7 | Rick's direct phone, 20+ years tenure |
+| **Stats** | 20+ years, licensed/insured, named equipment, fast response | 20+ years, licensed/insured, free consultations, Chippewa Valley |
+| **Trust signal** | Rick's direct phone, 20+ years tenure | Rick's direct phone, 20+ years tenure |
+
+**Voice pattern (both sites):** specific outcome > generic promise. Concrete details (named neighborhoods, response times, real equipment) over marketing cliches. Truth claims before features ("20+ Years of Local Experience" with proof, not "Fast Service"). Editorial > transactional.
 
 ---
 
@@ -60,21 +63,31 @@
 ### Colors
 | Token | Value | Use |
 |---|---|---|
-| `--forest-primary` | `#1e3a1e` | Primary forest green (CTAs, headings on light) |
-| `--forest-secondary` | `#2a5a2a` | Card backgrounds, hover states |
-| `--forest-tertiary` | `#326632` | Hover, active states |
-| `--cream` | `#f5f2e9` | Light backgrounds, off-white sections |
-| `--cream-warm` | `#e8e2d0` | Subtle accent backgrounds |
-| `--charcoal` | `#1a1a1a` | Body text |
-| `--charcoal-soft` | `#3a3a3a` | Secondary text |
-| `--sage` | `#7a8a6a` | Soft accent (use sparingly — only for "care" framing touches) |
-| `--white` | `#ffffff` | Pure white |
+| `--navy` | `#1a2a4a` | Primary navy (CTAs, headings on light, brand mark) |
+| `--navy-light` | `#243656` | Hover states, secondary navy surfaces |
+| `--navy-dark` | `#131f3a` | Deep navy, hero overlays, footer |
+| `--gold` | `#c9a84c` | Primary gold (CTA accents, eyebrow text, gold borders on badge pills) |
+| `--gold-light` | `#d4bc6a` | Hover/active gold, decorative highlights |
+| `--gold-dark` | `#a8893a` | Subdued gold for borders, dividers |
+| `--gold-ink` | `#7a5f18` | AA-passing gold for body text on cream/white (use instead of `--gold` for inline text) |
+| `--cream` | `#F2EBD9` | Light backgrounds, off-white sections, page base |
+| `--cream-soft` | `#f7f0e3` | Subtle accent backgrounds |
+| `--cream-dark` | `#e8e0c9` | Cards, table headers |
+| `--cream-darker` | `#d8cfb6` | Borders, dividers on cream |
+| `--white` | `#ffffff` | Pure white surfaces |
+| `--text-dark` | `#0f1623` | Body text |
+| `--text-mid` | `#4a4a4a` | Secondary text |
+
+**Why navy + gold:** extracted from truck signage (see `/workspace/clients/rick-olson/eau_claire_tree_service/logo.png`). Consistent brand identity across all Rick-operated microsites. Green tokens (legacy forest palette) are **aliased to navy/gold** in the CSS — old rules still reference them and get navy/gold automatically.
 
 **Anti-slop guard:** No purple-blue gradients, no beige+brass+espresso artisan palette, no Inter+slate-900 default.
 
 ### Fonts
-- **Headlines:** Playfair Display 700/900 (serif, professional, same family as removals site)
-- **Body:** Source Sans 3 400/600/700 (clean sans-serif, same family as removals site)
+- **Display/Logo:** Great Vibes 400 (script, "Eau Claire" wordmark only)
+- **Headlines:** Barlow Condensed 700/800 (compressed sans-serif, "TREE TRIMMING" wordmark + section titles)
+- **Body:** DM Sans 400/500/600 (clean sans-serif, body copy + UI)
+
+Loaded via single Google Fonts request: `Great+Vibes|Barlow+Condensed:wght@700;800|DM+Sans:wght@400;500;600&display=swap`.
 
 ### Motion
 - 140-220ms for control transitions
@@ -173,14 +186,14 @@ CSS for `.parent-brand-footer` already exists in `/workspace/clients/rick-olson/
 
 ### Per-page intent
 
-**1. `index.html`**
-- Title: "Tree Trimming & Care | Eau Claire Tree Trimming | Western Wisconsin"
-- H1: "Healthy Trees, Year After Year."
-- Hero subhead: "From seasonal pruning and crown work to disease treatment and health plans — we keep your trees strong, safe, and beautiful."
+**1. `index.html`** (SHIPPED 2026-08-08)
+- Title: "Eau Claire Tree Trimming | Tree Trimming & Care | Western Wisconsin"
+- H1: "Healthy trees. Year after year." (shipped)
+- Hero subhead: "Seasonal pruning, crown work, disease treatment and health plans throughout Western Wisconsin. Licensed, insured, and every call is answered by Rick personally." (shipped)
 - Hero image: `images/hero/hero-main-1920w.jpg` (arborist in harness mid-cut, golden hour)
 - 2 service cards: Tree Trimming & Pruning + Tree Health & Care
-- Why us: 4 cards (20+ years, licensed/insured, healthy tree/healthy property, free consultations)
-- Trust strip: 4 stats
+- Why us: 4 cards (20+ years, licensed/insured, free assessment, healthy tree/property value)
+- Trust strip: 3-badge pill row (Licensed & Insured / Free Assessment / 20+ Years Experience)
 - Service area: 6 city cards
 - CTA band: "Ready for Healthier Trees?" + phone
 
@@ -252,9 +265,11 @@ CSS for `.parent-brand-footer` already exists in `/workspace/clients/rick-olson/
 ### Favicon
 - `favicon.png` (51KB) — minimalist green tree icon
 
-### CSS + JS (clone from removals site)
-- `css/style.css` (copy from `eau_claire_tree_removals/css/style.css`, ~40KB)
-- `js/main.js` (copy from `eau_claire_tree_removals/js/main.js`, ~4KB)
+### CSS + JS (canonical source of truth = `/workspace/clients/rick-olson/eauclairetreetrim/css/style.css`)
+- `css/style.css` — canonical style system (~49KB, 1972 lines). This is the source of truth for ALL sister microsites.
+- `js/main.js` — canonical JS (~3KB, 103 lines). Drawer menu, smooth-scroll, scroll-reveal.
+
+**Design parity (locked 2026-10-01):** `eauclairetreeremovals.com` CSS + JS cloned from this repo. Going forward, any CSS/JS change is made here first and propagated to sister sites. Hub-and-spoke design system.
 
 ---
 
@@ -266,19 +281,24 @@ CSS for `.parent-brand-footer` already exists in `/workspace/clients/rick-olson/
 - **CTA:** "Call Now" (no estimate/consultation qualifier) ✅
 - **Hours:** None published (matches parent) ✅
 - **Phone format:** E.164 `+1-715-834-5239` in schema, `(715) 834-5239` in visible copy ✅
+- **Canonical phone:** Switched from `(715) 579-1942` to `(715) 834-5239` on 2026-10-01. Both numbers remain active per Rick's confirmation. ✅
+- **Design parity with removals:** CSS + JS canonicalized here on 2026-10-01. Trim is the source of truth going forward; removals mirrors. ✅
 
 ---
 
-## Build order (recommended for subagent)
+## Build status (SHIPPED 2026-08-08)
 
-1. Copy `css/style.css` and `js/main.js` from `/workspace/clients/rick-olson/eau_claire_tree_removals/` to `/workspace/clients/rick-olson/eauclairetreetrim/`
+All 6 pages built and deployed per the recommended subagent order below. Trim is the canonical design system for the Eau Claire Tree Service microsite family — use this site as the build template for any new sister site going forward.
+
+### Subagent build order (kept for reference / new sister sites)
+
+1. Copy `css/style.css` and `js/main.js` from this repo to the new sister site
 2. Build `index.html` first (homepage sets the design language)
-3. Build `tree-trimming.html` (service page template)
-4. Build `tree-care.html` (parallel structure to tree-trimming)
-5. Build `eau-claire.html` and `chippewa-falls.html` (city page templates)
-6. Build `contact-us.html` (most complex, save for last)
-7. Generate `sitemap.xml` with all 6 URLs
-8. Update all internal `href` references to match the 6 new page filenames
+3. Build service pages (one per primary service)
+4. Build `eau-claire.html` and other city pages (city page templates)
+5. Build `contact-us.html` (most complex, save for last)
+6. Generate `sitemap.xml` with all URLs
+7. Update all internal `href` references to match the new page filenames
 
 ---
 
@@ -295,9 +315,9 @@ CSS for `.parent-brand-footer` already exists in `/workspace/clients/rick-olson/
 
 ---
 
-## Verification gates (before deploy)
+## Verification gates (kept for future iterations / new sister sites)
 
-- [ ] All 6 pages parse at https://validator.schema.org/ with zero errors
+- [ ] All pages parse at https://validator.schema.org/ with zero errors
 - [ ] All `parentOrganization` blocks present
 - [ ] All phone numbers in E.164 format in JSON-LD
 - [ ] All visible phone numbers in display format `(715) 834-5239`
@@ -306,6 +326,10 @@ CSS for `.parent-brand-footer` already exists in `/workspace/clients/rick-olson/
 - [ ] WCAG contrast gate passes (use `verify-contrast-failures.js` to filter timing false positives)
 - [ ] Playwright visual QA at desktop + mobile, no broken layouts
 - [ ] Sitemap.xml includes all 6 URLs with correct `lastmod` dates
+
+## Last design sync
+
+**2026-10-01:** CSS + JS canonicalized to trim site. `eauclairetreeremovals.com` CSS/JS cloned from this repo. Phone `(715) 579-1942` → `(715) 834-5239` across all 4 sites + docs. Removals copy editorial voice aligned with trim (H1 "Done right. Done safely.", Why "The Job Done Right, Every Time"). See git log for `commit 29291ef` (trim canonicalization) + `commit 9ff380c` (removals copy).
 
 ---
 
