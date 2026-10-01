@@ -18,7 +18,7 @@
 |---|---|
 | **Business** | Eau Claire Tree Trimming (division of Eau Claire Tree Service) |
 | **Owner** | Rick Olson (20+ years) |
-| **Phone** | (715) 579-1942 |
+| **Phone** | (715) 834-5239 |
 | **Email** | rickolson456@gmail.com |
 | **Service area** | Eau Claire, Chippewa Falls, Altoona, Menomonie, Mondovi, Bloomer (6 cities, matches sister sites) |
 | **Parent brand** | EauClaireTreeService.com (managed by Rick's wife, do not touch) |
@@ -116,7 +116,7 @@
   "name": "Eau Claire Tree Trimming",
   "alternateName": "Eau Claire Tree Service — Trimming & Care Division",
   "url": "https://eauclairetreetrim.com/",
-  "telephone": "+1-715-579-1942",
+  "telephone": "+1-715-834-5239",
   "email": "rickolson456@gmail.com",
   "address": {
     "@type": "PostalAddress",
@@ -139,12 +139,12 @@
     "@id": "https://eauclairetreeservice.com/#organization",
     "name": "Eau Claire Tree Service",
     "url": "https://eauclairetreeservice.com/",
-    "telephone": "+1-715-579-1942"
+    "telephone": "+1-715-834-5239"
   }
 }
 ```
 
-**Phone format:** Always `+1-715-579-1942` (E.164). Never `(715) 579-1942` raw in JSON-LD.
+**Phone format:** Always `+1-715-834-5239` (E.164). Never `(715) 834-5239` raw in JSON-LD.
 
 ---
 
@@ -265,7 +265,7 @@ CSS for `.parent-brand-footer` already exists in `/workspace/clients/rick-olson/
 - **Service area:** 6 cities matching sister sites ✅
 - **CTA:** "Call Now" (no estimate/consultation qualifier) ✅
 - **Hours:** None published (matches parent) ✅
-- **Phone format:** E.164 `+1-715-579-1942` in schema, `(715) 579-1942` in visible copy ✅
+- **Phone format:** E.164 `+1-715-834-5239` in schema, `(715) 834-5239` in visible copy ✅
 
 ---
 
@@ -300,7 +300,7 @@ CSS for `.parent-brand-footer` already exists in `/workspace/clients/rick-olson/
 - [ ] All 6 pages parse at https://validator.schema.org/ with zero errors
 - [ ] All `parentOrganization` blocks present
 - [ ] All phone numbers in E.164 format in JSON-LD
-- [ ] All visible phone numbers in display format `(715) 579-1942`
+- [ ] All visible phone numbers in display format `(715) 834-5239`
 - [ ] Single outbound link in footer to parent (no sibling links)
 - [ ] No fake testimonials, no fake precision numbers
 - [ ] WCAG contrast gate passes (use `verify-contrast-failures.js` to filter timing false positives)
