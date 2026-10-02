@@ -459,7 +459,8 @@ ul, ol { list-style: none; }
   height: 100%;
 }
 
-.hero-img {
+.hero-img,
+.page-hero-img {
   width: 100% !important;
   height: 100% !important;
   max-width: none !important;
@@ -467,7 +468,10 @@ ul, ol { list-style: none; }
   object-position: center 30%;
 }
 
-.hero-overlay {
+.hero .hero-overlay,
+.hero-overlay,
+.page-hero .hero-overlay,
+.page-hero .page-hero-overlay {
   position: absolute;
   top: 0; right: 0; bottom: 0; left: 0;
   z-index: 1 !important;
@@ -481,7 +485,8 @@ ul, ol { list-style: none; }
 }
 
 .page-hero .hero-content,
-.hero .hero-content {
+.hero .hero-content,
+.page-hero .page-hero-content {
   position: relative;
   z-index: 2;
   display: flex;
@@ -501,7 +506,8 @@ ul, ol { list-style: none; }
 /* Mobile hero: tighter, smaller CTA, fix badge wrap */
 @media (max-width: 640px) {
   .page-hero .hero-content,
-  .hero .hero-content {
+  .hero .hero-content,
+  .page-hero .page-hero-content {
     padding: calc(76px + var(--space-4)) var(--gutter) var(--space-4);
     gap: var(--space-2);
     justify-content: flex-start;
@@ -1429,7 +1435,8 @@ a.area-card:hover {
   );
 }
 .page-hero .hero-content,
-.hero .hero-content {
+.hero .hero-content,
+.page-hero .page-hero-content {
   position: relative;
   z-index: 2 !important;
   background-color: transparent;
@@ -1554,12 +1561,14 @@ a.area-card:hover {
 
 @media (max-width: 640px) {
   .page-hero .hero-content,
-  .hero .hero-content {
+  .hero .hero-content,
+  .page-hero .page-hero-content {
     padding: calc(68px + var(--space-4)) var(--gutter) var(--space-6);
   }
 }
 
-.page-hero .hero-content { min-height: 0; }
+.page-hero .hero-content,
+.page-hero .page-hero-content { min-height: 0; }
 
 .page-hero .hero-headline {
   font-size: clamp(2rem, 5vw, 3.5rem);
@@ -1981,8 +1990,7 @@ a.area-card:hover {
    Propagation rule: add aliases here on trim, then clone to sister repos.
 */
 .hero-media,
-.hero-bg { position: absolute; inset: 0; }
-
+.hero-bg,
 .page-hero .hero-media,
 .page-hero .hero-bg,
 .page-hero .page-hero-bg { position: absolute; inset: 0; }
@@ -1993,9 +2001,6 @@ a.area-card:hover {
 
 .hero .hero-content,
 .page-hero .page-hero-content { /* inherits .hero .hero-content */ }
-
-.page-hero .hero-headline,
-.page-hero .page-hero-title { /* inherits .page-hero .hero-headline */ }
 
 .page-hero .hero-sub,
 .page-hero .page-hero-subtitle { /* inherits .page-hero .hero-sub */ }
