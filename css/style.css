@@ -1970,3 +1970,61 @@ a.area-card:hover {
     scroll-behavior: auto !important;
   }
 }
+
+/* =========================================
+   PAGE-HERO ALIASES (shared with eauclairetree.com inner pages)
+   =========================================
+   eauclairetree.com inner pages use .page-hero-bg, .page-hero-title,
+   .page-hero-subtitle, .page-hero-content, .page-hero-img, .page-hero-overlay,
+   .hero-bg as aliases for the canonical .hero-* / .page-hero-* rules.
+   These aliases share the same styling without duplicating declarations.
+   Propagation rule: add aliases here on trim, then clone to sister repos.
+*/
+.hero-media,
+.hero-bg { position: absolute; inset: 0; }
+
+.page-hero .hero-media,
+.page-hero .hero-bg,
+.page-hero .page-hero-bg { position: absolute; inset: 0; }
+.page-hero .page-hero-img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; }
+
+.hero .hero-overlay,
+.page-hero .page-hero-overlay { /* inherits .hero .hero-overlay */ }
+
+.hero .hero-content,
+.page-hero .page-hero-content { /* inherits .hero .hero-content */ }
+
+.page-hero .hero-headline,
+.page-hero .page-hero-title { /* inherits .page-hero .hero-headline */ }
+
+.page-hero .hero-sub,
+.page-hero .page-hero-subtitle { /* inherits .page-hero .hero-sub */ }
+
+/* page-hero-title and page-hero-subtitle: full styling for inner-page hero */
+.page-hero .page-hero-title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  color: var(--white);
+  text-wrap: balance;
+  max-width: 720px;
+  text-shadow: 0 3px 0 rgba(0,0,0,0.5), 0 6px 20px rgba(0,0,0,0.7), 0 1px 4px rgba(0,0,0,0.5);
+}
+.page-hero .page-hero-subtitle {
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0;
+  line-height: 1.6;
+  font-weight: 500;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.8), 0 1px 4px rgba(0,0,0,0.6);
+}
+
+/* section-eyebrow — subagent's chosen class for inner-page section labels */
+.section-eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
