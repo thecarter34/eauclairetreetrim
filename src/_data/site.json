@@ -1,0 +1,28 @@
+{
+  "name": "Eau Claire Tree Trimming",
+  "tagline": "Tree Trimming, Pruning & Care",
+  "url": "https://eauclairetreetrim.com",
+  "phone": "(715) 834-5239",
+  "phoneE164": "+1-715-834-5239",
+  "phoneTel": "tel:+17158345239",
+  "email": "rickolson456@gmail.com",
+  "parentBrand": {
+    "name": "Eau Claire Tree Service",
+    "url": "https://eauclairetreeservice.com/"
+  },
+  "address": {
+    "locality": "Eau Claire",
+    "region": "WI",
+    "postalCode": "54701",
+    "country": "US",
+    "display": "Eau Claire, WI 54701"
+  },
+  "areas": [
+    "Eau Claire",
+    "Chippewa Falls",
+    "Altoona",
+    "Menomonie",
+    "Mondovi",
+    "Bloomer"
+  ]
+}
