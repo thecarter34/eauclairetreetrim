@@ -1,0 +1,14 @@
+{
+  "name": "eauclairetreetrim-11ty",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Eau Claire Tree Trimming — 11ty v3 build of the eauclairetreetrim.com microsite",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve --port 8767"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6"
+  }
+}
