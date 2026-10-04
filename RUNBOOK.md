@@ -1,11 +1,11 @@
 # `eauclairetreetrim.com` — Tree Trimming Microsite (Runbook)
 
-> **Status:** Maintenance (11ty migration **COMPLETE**; architecture unified on `dev` with identical `base.njk` pattern as removals + stump — JSON-LD wrapper in partial, root-absolute paths in partials + page templates)
+> **Status:** Maintenance (11ty migration **COMPLETE**; architecture unified on `dev`; contact page unified to canonical template)
 > **Why:** Josh-managed spoke 4 of the Eau Claire Tree Service hub-and-spoke. Owns the **tree trimming, tree pruning, tree care, arborist pruning, tree disease treatment** keyword bucket. Static HTML on Cloudflare Pages — built Aug 2026. **Also the canonical CSS/JS source of truth for the entire microsite family.**
 > **Engine:** claude_code (no active workstream — 11ty migration shipped PR #1 + PR #3 on `dev` as `bd56e04`; awaiting dev → prd)
 > **Next:** Promote dev → prd when you're ready (the unified architecture on dev hasn't been promoted yet). After that: nothing in flight.
 > **Blocker:** 🟢 None
-> **Last touched:** 2026-10-03 (11ty migration COMPLETE on this spoke + removals + stump; all 3 unified on `dev` with identical `base.njk` pattern; PR #3 squash-merged `bd56e04`)
+> **Last touched:** 2026-10-04 (contact page unified to canonical template: 6-section structure, 2-card direct contact, trust strip, area descriptors; commit fd2c04b on feat/unify-contact-page)
 
 ## 0. In flight
 
@@ -226,6 +226,7 @@ Each site is a sibling 11ty project. They all consume the same shared partials. 
 
 ## 12. Change log
 
+- **2026-10-04:** Contact page unified to canonical template. Hero: eyebrow "Get In Touch" + H1 "Call Rick. Anytime." + sub (no change to JSON-LD). Added trust strip (Licensed & Insured / 24/7 Emergency / Free Estimates). 2-card direct contact (phone + email). What to Expect: trust bar + 4 service cards. Service area: 6 cities with area descriptors (gold pin for Eau Claire, amber pins for others). FAQ: 4 trim-specific questions kept. Order now: Hero → Trust Strip → Direct Contact → What to Expect → Service Area → FAQ. Commit `fd2c04b` on `feat/unify-contact-page`.
 - **2026-10-03:** Runbook split — extracted from the hub god-doc. Consolidated the 11ty migration plan into §11 (was scattered across the god-doc). Cross-refs to the hub [RUNBOOK.md](../RUNBOOK.md) for client info / billing / architecture. No code changes this session.
 - **2026-10-02:** 11ty Phase 1 POC complete (see §11). Branch `feat/11ty-migration` in `/tmp/eauclairetreetrim-11ty`, commit `3719095`. Not pushed — Josh handles push.
 - **2026-10-01:** Locked as canonical CSS/JS source of truth for the microsite family. Commits `47fab4c`, `f5d76d9`, `02adf01` all squash-merged from dev→prd.
