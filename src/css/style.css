@@ -1454,7 +1454,7 @@ a.area-card:hover {
 }
 .logo-wordmark {
   display: block;
-  height: 40px;
+  height: 46px;
   width: auto;
 }
 
@@ -1464,7 +1464,7 @@ a.area-card:hover {
   .drawer-logo {
     padding: 4px 10px;
   }
-  .logo-wordmark { height: 34px; }
+  .logo-wordmark { height: 40px; }
 }
 
 /* Footer: round badge, served as /images/logo-badge.svg */
