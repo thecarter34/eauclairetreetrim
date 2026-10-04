@@ -47,8 +47,7 @@
   --brown-light:  var(--gold-light);
   --brown:        var(--gold);
 
-  /* Typography — Great Vibes + Barlow Condensed + DM Sans (matches canon) */
-  --font-script:   'Great Vibes', cursive;
+  /* Typography — Barlow Condensed + DM Sans. The script lettering lives in /images/logo.svg. */
   --font-display:  'Barlow Condensed', sans-serif;
   --font-body:     'DM Sans', system-ui, sans-serif;
 
@@ -1444,119 +1443,40 @@ a.area-card:hover {
   width: 100%;
 }
 
-/* ---- Wordmark (truck-signage: Eau Claire / TREE TRIMMING) ---- */
-.hero-logo {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: var(--space-4);
-  line-height: 1;
-}
-.hero-logo-eau {
-  font-family: var(--font-script);
-  font-size: clamp(2rem, 4vw, 3rem);
-  color: var(--gold);
-  margin-bottom: 2px;
-  text-shadow: 0 1px 8px rgba(0,0,0,0.5), 0 2px 4px rgba(0,0,0,0.3);
-}
-.hero-logo-tree {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 5.5vw, 4rem);
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: #ffffff;
-  line-height: 0.95;
-  text-shadow:
-    0 0 14px var(--gold-glow),
-    0 0 6px rgba(201,168,76,0.9),
-    0 2px 6px rgba(0,0,0,0.35);
-}
-/* In the header (dark background, smaller) — matches truck: navy on cream plate with gold outline */
-.site-header .hero-logo {
-  line-height: 1.15;
-  margin-bottom: 0;
-}
-.site-header .logo {
+/* ---- Wordmark (truck signage: Eau Claire / descriptor), served as /images/logo.svg ---- */
+/* Header + drawer: navy-on-cream plate, like the lettering on the trucks */
+.site-header .logo,
+.drawer-logo {
   padding: 6px 12px;
   background: var(--cream);
   border-radius: var(--radius-sm);
   border: 1px solid rgba(201, 168, 76, 0.3);
 }
-.site-header .hero-logo-eau {
-  color: var(--navy-dark);
-  font-size: 1.05rem;
-  line-height: 1.2;
-  text-shadow: none;
-}
-.site-header .hero-logo-tree {
-  color: var(--navy-dark);
-  font-size: 1.15rem;
-  line-height: 1.1;
-  -webkit-text-stroke: 0.5px var(--gold);
-  text-shadow: none;
+.logo-wordmark {
+  display: block;
+  height: 46px;
+  width: auto;
 }
 
 /* Mobile header: smaller wordmark plate */
 @media (max-width: 640px) {
-  .site-header .logo {
-    padding: 4px 10px;
-  }
-  .site-header .hero-logo-eau { font-size: 0.95rem; }
-  .site-header .hero-logo-tree { font-size: 1rem; }
-  /* Drawer: also shrink on mobile (matches mobile header) */
+  .site-header .logo,
   .drawer-logo {
     padding: 4px 10px;
   }
-  .drawer-logo .hero-logo-eau { font-size: 0.95rem; }
-  .drawer-logo .hero-logo-tree { font-size: 1rem; }
+  .logo-wordmark { height: 40px; }
 }
 
-.footer-logo .hero-logo {
-  line-height: 1.1;
-  margin-bottom: 0;
-}
-.footer-logo .hero-logo-eau {
-  color: var(--navy-dark);
-  font-size: 1.6rem;
-  line-height: 1.15;
-  text-shadow: none;
-}
-.footer-logo .hero-logo-tree {
-  color: var(--navy-dark);
-  font-size: 1.3rem;
-  line-height: 1.05;
-  letter-spacing: 0.04em;
-  -webkit-text-stroke: 1px var(--gold);
-  text-shadow: none;
-}
-
+/* Footer: round badge, served as /images/logo-badge.svg */
 .footer-logo {
   display: inline-flex;
-  padding: 8px 14px;
-  background: var(--cream);
-  border-radius: var(--radius-sm);
-  border: 1px solid rgba(201, 168, 76, 0.3);
   width: fit-content;
+  border-radius: 50%;
 }
-
-.drawer-logo .hero-logo {
-  line-height: 1.1;
-  margin-bottom: 0;
-}
-.drawer-logo .hero-logo-eau {
-  color: var(--navy-dark);
-  font-size: 1.05rem;
-  line-height: 1.2;
-  text-shadow: none;
-}
-.drawer-logo .hero-logo-tree {
-  color: var(--navy-dark);
-  font-size: 1.15rem;
-  line-height: 1.1;
-  letter-spacing: 0;
-  -webkit-text-stroke: 0.5px var(--gold);
-  text-shadow: none;
+.footer-badge {
+  display: block;
+  width: 112px;
+  height: 112px;
 }
 
 @media (max-width: 640px) {
