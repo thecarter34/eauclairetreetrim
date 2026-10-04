@@ -1,20 +1,17 @@
 # `eauclairetreetrim.com` — Tree Trimming Microsite (Runbook)
 
-> **Status:** Maintenance (11ty migration **COMPLETE**; architecture unified on `dev`; contact page unified to canonical template)
+> **Status:** Maintenance (11ty migration **COMPLETE**; architecture unified; contact page unified to canonical template; **LIVE on prd** as of 2026-10-04 squash-merge `15c5bef`)
 > **Why:** Josh-managed spoke 4 of the Eau Claire Tree Service hub-and-spoke. Owns the **tree trimming, tree pruning, tree care, arborist pruning, tree disease treatment** keyword bucket. Static HTML on Cloudflare Pages — built Aug 2026. **Also the canonical CSS/JS source of truth for the entire microsite family.**
-> **Engine:** claude_code (no active workstream — 11ty migration shipped PR #1 + PR #3 on `dev` as `bd56e04`; awaiting dev → prd)
-> **Next:** Promote dev → prd when you're ready (the unified architecture on dev hasn't been promoted yet). After that: nothing in flight.
+> **Engine:** claude_code (no active workstream — 11ty migration shipped on dev, promoted to prd)
+> **Next:** No in-flight work. If Rick reports a phone-dial issue, dump the byte-level tel: first (see hub RUNBOOK §13 lesson on glyph-rendering).
 > **Blocker:** 🟢 None
-> **Last touched:** 2026-10-04 (contact page unified to canonical template: 6-section structure, 2-card direct contact, trust strip, area descriptors; commit fd2c04b on feat/unify-contact-page)
+> **Last touched:** 2026-10-04 (dev → prd squash-merge `15c5bef` — visual alignment + SVG truck-signage logos + webmanifest + og-image normalization all live in production. 16 add/add conflicts resolved by taking dev's version. `npm run build` exits 0, 6 files written.)
 
 ## 0. In flight
 
-_Live working items. Add on pickup, close on completion (move completed entry to Change Log)._
-
-- (2026-10-03 11:30) Runbook split — extracted this file from the hub god-doc; consolidated the 11ty migration plan into §11 (was scattered across the god-doc)
-- [x] (2026-10-02 — done) **11ty Phase 1 POC complete.** 6 HTML files ported to Nunjucks templates. `npm run build` exits 0 in ~0.1s. CSS/JS passthrough is BYTE-IDENTICAL to source. Element-count parity verified per page. Visual check OK. Branch: `feat/11ty-migration` (from `origin/dev`), commit `3719095`. **Not pushed** — Josh handles push.
-- [ ] (2026-10-02 — open) Push `feat/11ty-migration` branch to origin → open PR against `dev` → review → merge
-- [ ] (2026-10-02 — open) Decision gate after merge: proceed to Phase 3 (port removals + stump) or iterate on the POC
+- (2026-10-04 evening) dev → prd squash-merge complete. All visual alignment, SVG logos, webmanifest, and og-image normalization live in production. Nothing in flight.
+- [x] (2026-10-03 — done) **11ty migration complete.** All phases shipped: POC merged (PR #1 `a1037cd`), JSON-LD wrapper in `base.njk` (PR #3 `bd56e04`), contact page unified (PR #4 `f92d912` + PR #5 `f71d66e`), SVG truck-signage logos + webmanifest + og-image normalization (PR #6 `79d0da0`). Promoted to prd via squash-merge `15c5bef` 2026-10-04. No further work on this site.
+- [x] (2026-10-02 — done) 11ty Phase 1 POC complete. 6 HTML files ported to Nunjucks templates. `npm run build` exits 0 in ~0.1s. CSS/JS passthrough is BYTE-IDENTICAL to source. Element-count parity verified per page. Visual check OK.
 
 ## 1. Quick facts
 
@@ -27,8 +24,8 @@ _Live working items. Add on pickup, close on completion (move completed entry to
 | **Local path** | `/workspace/clients/rick-olson/eauclairetreetrim/` |
 | **Hosting** | Cloudflare Pages (project: `eauclairetreetrim`) — auto-picks up `prd` branch |
 | **Stack** | Static HTML/CSS/JS (current); **11ty v3 + Nunjucks** (migration in progress) |
-| **Branches** | `dev` (working), `prd` (production — `9ee0a5f`), `feat/11ty-migration` (in `/tmp/eauclairetreetrim-11ty`) |
-| **Last commit on dev** | `47fab4c` (css: add .section-eyebrow-light variant) |
+| **Branches** | `dev` (working), `prd` (production — `15c5bef`, 2026-10-04) |
+| **Last commit on dev** | `79d0da0` (feat: SVG truck-signage logos (Tree Trimming) (#6)) |
 | **Phone** | `(715) 834-5239` (E.164 `+1-715-834-5239`) — canonical |
 | **Fonts** | Great Vibes (script logo) + Barlow Condensed (headlines 700/800/900) + DM Sans (body 400/500/600) |
 | **Design system** | Navy (#1a2a4a / #131f3a) + Gold (#c9a84c) + Cream (#f2ebd9) — **THIS SITE is the canonical CSS/JS source for the microsite family** |
@@ -44,10 +41,9 @@ _Live working items. Add on pickup, close on completion (move completed entry to
 | Hub runbook (architecture, billing, design system, schema templates) | `/workspace/clients/rick-olson/RUNBOOK.md` |
 | **Canonical CSS** (microsite family source) | `/workspace/clients/rick-olson/eauclairetreetrim/css/style.css` (1972 lines, ~49 KB) |
 | **Canonical JS** (microsite family source) | `/workspace/clients/rick-olson/eauclairetreetrim/js/main.js` (103 lines, ~3 KB) |
-| Sibling: stump-grinding microsite (WordPress) | `../eau_claire_tree/RUNBOOK.md` |
-| Sibling: tree removals microsite | `../eau_claire_tree_removals/RUNBOOK.md` |
-| 11ty migration worktree (temporary) | `/tmp/eauclairetreetrim-11ty` (branch `feat/11ty-migration`) |
-| Build plan (historical, 2026-08-08) | `../eauclairetreetrim-com-build-plan.md` (closed — see Change Log) |
+| **Stump microsite** | [../eau_claire_tree/RUNBOOK.md](../eau_claire_tree/RUNBOOK.md) |
+| **Removals microsite** | [../eau_claire_tree_removals/RUNBOOK.md](../eau_claire_tree_removals/RUNBOOK.md) |
+| **Build plan (historical, 2026-08-08)** | `../eauclairetreetrim-com-build-plan.md` (closed — see Change Log) |
 | Required schema snippet | `../RUNBOOK.md` → "Required Schema Snippet" |
 | Required footer block | `../RUNBOOK.md` → "Required Footer Block" |
 
@@ -185,10 +181,10 @@ Each site is a sibling 11ty project. They all consume the same shared partials. 
 | Phase | Status | Work | Decision gate |
 |---|---|---|---|
 | **Phase 1 — POC** | ✅ Complete 2026-10-02 | Port this site (smallest, canonical design source) to 11ty v3. 6 HTML files → 6 Nunjucks templates. New `package.json` (only `@11ty/eleventy` as devDep), `.eleventy.js`, `src/` folder structure. Byte-equivalent `_site/` output to current source. | Visual + element-count parity verified |
-| **Phase 2 — Verify and decide** | 🟡 In progress | Push `feat/11ty-migration` to origin → open PR against `dev` → review → merge | Josh approves the PR |
-| **Phase 3 — Port the other 2 spokes** | ⏳ Blocked on Phase 2 | **Removals (6 pages):** clone pattern from trim. **Stump (22 pages):** same pattern, larger content surface but templates proven. | Per-site visual parity verified |
-| **Phase 4 — Extract shared design system** | ⏳ Blocked on Phase 3 | Move canonical `css/style.css` + `js/main.js` to `_design-system/` as the single source. All 3 sites reference via relative passthrough. | One edit updates all 3 sites on next build |
-| **Phase 5 — CF Pages build config** | ⏳ Blocked on Phase 4 | Per-site: build command `npm run build`, output `_site/`, branch `dev` → preview / `prd` → production. Existing wrangler / CF Pages integration picks up the new build automatically. | No infra change required |
+| **Phase 2 — Push and review** | ✅ Complete 2026-10-03 | Push to `origin/dev`, PR against `dev`, review, merge. PRs #1–#6 all squash-merged. | All merged |
+| **Phase 3 — Port the other 2 spokes** | ✅ Complete 2026-10-04 | Removals and stump both shipped their 11ty migrations before this phase gate. See their per-site runbooks. | Per-site visual parity verified |
+| **Phase 4 — Promote to prd** | ✅ Complete 2026-10-04 | All 3 sites squash-merged dev → prd (`15c5bef`, `1e58533`, `5ac525a`). 11ty `_site/` output is now what CF Pages serves from prd. | Live in production |
+| **Phase 5 — CF Pages build config** | ⏳ Partial | CF Pages already auto-builds the 11ty output (no `wrangler` deploy needed). No config change required. | n/a |
 
 ### What we explicitly do NOT do
 - Do NOT add Tailwind, React, Vue, Svelte, jQuery, or any framework beyond 11ty + Nunjucks
@@ -226,6 +222,7 @@ Each site is a sibling 11ty project. They all consume the same shared partials. 
 
 ## 12. Change log
 
+- **2026-10-04 (evening):** **dev → prd squash-merge `15c5bef` — all alignment + SVG logos live in production.** 33 files changed, 557+/259-. 16 add/add conflicts resolved by taking dev's version (prd was on the old flat-`.html` layout). CF Pages will auto-rebuild from prd. Verified: `npm run build` exits 0, 6 files written, contact page dials `tel:+1-715-834-5239` correctly. Tel: was already correct on this site (no fix needed). Asset roll-out: new `src/images/logo.svg` + `src/images/logo-dark.svg` (SVG truck-signage matching the navy/gold/cream wordmark), new `src/site.webmanifest`, `src/images/og-image-640w.jpg` and `src/images/og-image-apple.png` removed in favor of the new `src/images/og-image.png`.
 - **2026-10-04:** Contact page unified to canonical template. Hero: eyebrow "Get In Touch" + H1 "Call Rick. Anytime." + sub (no change to JSON-LD). Added trust strip (Licensed & Insured / 24/7 Emergency / Free Estimates). 2-card direct contact (phone + email). What to Expect: trust bar + 4 service cards. Service area: 6 cities with area descriptors (gold pin for Eau Claire, amber pins for others). FAQ: 4 trim-specific questions kept. Order now: Hero → Trust Strip → Direct Contact → What to Expect → Service Area → FAQ. Commit `fd2c04b` on `feat/unify-contact-page`.
 - **2026-10-03:** Runbook split — extracted from the hub god-doc. Consolidated the 11ty migration plan into §11 (was scattered across the god-doc). Cross-refs to the hub [RUNBOOK.md](../RUNBOOK.md) for client info / billing / architecture. No code changes this session.
 - **2026-10-02:** 11ty Phase 1 POC complete (see §11). Branch `feat/11ty-migration` in `/tmp/eauclairetreetrim-11ty`, commit `3719095`. Not pushed — Josh handles push.
