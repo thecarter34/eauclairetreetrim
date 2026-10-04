@@ -2,7 +2,8 @@
 
 > **Status:** Maintenance (11ty migration **COMPLETE**; architecture unified; contact page unified to canonical template; **LIVE on prd** as of 2026-10-04 squash-merge `15c5bef`)
 > **Why:** Josh-managed spoke 4 of the Eau Claire Tree Service hub-and-spoke. Owns the **tree trimming, tree pruning, tree care, arborist pruning, tree disease treatment** keyword bucket. Static HTML on Cloudflare Pages — built Aug 2026. **Also the canonical CSS/JS source of truth for the entire microsite family.**
-> **Engine:** claude_code (no active workstream — 11ty migration shipped on dev, promoted to prd)
+> **Engine:** claude_code (no active workstream — 11ty migration shipped, all alignment + SVG logos live on prd)
+> **Workflow (locked 2026-10-04):** No `dev` branch. Every change is a new branch → squash-merge PR → prd. CF Pages auto-deploys from `prd`. See §13.
 > **Next:** No in-flight work. If Rick reports a phone-dial issue, dump the byte-level tel: first (see hub RUNBOOK §13 lesson on glyph-rendering).
 > **Blocker:** 🟢 None
 > **Last touched:** 2026-10-04 (dev → prd squash-merge `15c5bef` — visual alignment + SVG truck-signage logos + webmanifest + og-image normalization all live in production. 16 add/add conflicts resolved by taking dev's version. `npm run build` exits 0, 6 files written.)
@@ -24,8 +25,8 @@
 | **Local path** | `/workspace/clients/rick-olson/eauclairetreetrim/` |
 | **Hosting** | Cloudflare Pages (project: `eauclairetreetrim`) — auto-picks up `prd` branch |
 | **Stack** | Static HTML/CSS/JS (current); **11ty v3 + Nunjucks** (migration in progress) |
-| **Branches** | `dev` (working), `prd` (production — `15c5bef`, 2026-10-04) |
-| **Last commit on dev** | `79d0da0` (feat: SVG truck-signage logos (Tree Trimming) (#6)) |
+| **Branches** | `prd` (only branch — production + working). New work: branch off `prd` → squash-merge PR → delete branch. |
+| **Last commit on prd** | `15c5bef` (release: dev to prd — visual alignment + SVG logos + webmanifest (#6)) |
 | **Phone** | `(715) 834-5239` (E.164 `+1-715-834-5239`) — canonical |
 | **Fonts** | Great Vibes (script logo) + Barlow Condensed (headlines 700/800/900) + DM Sans (body 400/500/600) |
 | **Design system** | Navy (#1a2a4a / #131f3a) + Gold (#c9a84c) + Cream (#f2ebd9) — **THIS SITE is the canonical CSS/JS source for the microsite family** |
@@ -219,6 +220,39 @@ Each site is a sibling 11ty project. They all consume the same shared partials. 
 - CSS (`51,670 bytes`) and JS (`3,791 bytes`) passthrough is BYTE-IDENTICAL to source — never edited
 - Visual check via headless browser screenshot: renders correctly, all sections present, palette intact
 - One known micro-quirk: Nunjucks autoescape converts one apostrophe in `Tree's Health?` to `&#39;`. Renders identically to a browser. Leave as-is (safer default).
+
+## 13. Git workflow (locked 2026-10-04)
+
+**No `dev` branch.** All work happens on throwaway branches off `prd`, squash-merged back to `prd` via PR, and the branch is deleted on merge.
+
+**Pattern (every change):**
+
+```bash
+cd /workspace/clients/rick-olson/eauclairetreetrim/
+git checkout prd
+git pull --prune
+git checkout -b <type>/<short-name>   # type: feat | fix | chore | docs | refactor
+# ... make changes ...
+git add -A
+git -c user.name="Josh Carter" -c user.email="littlecarter21@gmail.com" commit -m "<subject>"
+git push -u origin <type>/<short-name>
+gh pr create --base prd --head <type>/<short-name> --title "<subject>" --body "..."
+# (verify yourself per the standing rule, then approve + squash-merge)
+gh pr merge <N> --squash --delete-branch
+git remote prune
+```
+
+**Branch naming:** `feat/`, `fix/`, `chore/`, `docs/`, `refactor/` followed by a short kebab-case subject. No dates, no `JJ/` prefix, no leftover `dev` worktrees.
+
+**Commit metadata:** Use `git -c user.name="Josh Carter" -c user.email="littlecarter21@gmail.com"` per-call since the repo has no committer config. (Or set it once globally — see hub RUNBOOK.)
+
+**Force-push:** Allowed on feature branches (`git push --force-with-lease origin <branch>`) — never on `prd`.
+
+**Deploy:** CF Pages watches `prd`. Squash-merge → push to `prd` → CF Pages auto-builds and deploys within ~30 seconds. No `wrangler` deploy for this site. The build log URL is in the CF Pages dashboard; PRs to `prd` show the deploy preview link in the PR timeline.
+
+**Merge conflicts on a `prd` PR** (rare now that there's no `dev` drift): rebase the feature branch onto `prd` locally, resolve, push. Squash-merge again.
+
+**Standing rule:** After every merge, `git branch -D <branch>` (locally) + `git remote prune origin`. Feature branches are throwaway — never keep them around after merge.
 
 ## 12. Change log
 
