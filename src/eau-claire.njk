@@ -71,6 +71,48 @@ jsonLd: |-
         "name": "Tree Trimming in Eau Claire, WI | Eau Claire Tree Trimming",
         "isPartOf": {"@id": "https://eauclairetreetrim.com/#website"},
         "inLanguage": "en-US"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://eauclairetreetrim.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Service Areas", "item": "https://eauclairetreetrim.com/areas-we-serve.html"},
+          {"@type": "ListItem", "position": 3, "name": "Eau Claire, WI", "item": "https://eauclairetreetrim.com/eau-claire.html"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://eauclairetreetrim.com/eau-claire.html#faq",
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": ["h2", "h3", ".faq-question-text", ".faq-answer"]
+        },
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Do you handle trees in Eau Claire city limits?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. We're based in Eau Claire and handle work throughout the city and Eau Claire County. Most city calls can be scheduled same-day or next-day."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are you familiar with Eau Claire city regulations for tree work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Eau Claire has specific rules for tree work on private property, particularly in designated historic or protected zones. We handle permit research for your specific address when needed."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you work on large mature trees in tight residential lots?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Eau Claire has many older neighborhoods with large legacy trees close to homes, garages, and property lines. We have the climbing experience and rigging equipment to handle large trees in tight spaces without damaging surrounding property."
+            }
+          }
+        ]
       }
     ]
   }
