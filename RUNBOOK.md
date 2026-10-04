@@ -1,12 +1,12 @@
 # `eauclairetreetrim.com` — Tree Trimming Microsite (Runbook)
 
-> **Status:** Maintenance (11ty migration **COMPLETE**; architecture unified; contact page unified to canonical template; **LIVE on prd** as of 2026-10-04 squash-merge `15c5bef`)
+> **Status:** Maintenance (11ty migration **COMPLETE**; architecture unified; contact page unified to canonical template; **LIVE on prd**. Contact fix `Call or Text → Call` + email wrapping shipped 2026-10-04 via PR #13 `abb9d5e`.)
 > **Why:** Josh-managed spoke 4 of the Eau Claire Tree Service hub-and-spoke. Owns the **tree trimming, tree pruning, tree care, arborist pruning, tree disease treatment** keyword bucket. Static HTML on Cloudflare Pages — built Aug 2026. **Also the canonical CSS/JS source of truth for the entire microsite family.**
-> **Engine:** claude_code (no active workstream — 11ty migration shipped, all alignment + SVG logos live on prd)
+> **Engine:** claude_code (no active workstream — 11ty migration shipped, contact fix mirrored from stump PR #15)
 > **Workflow (locked 2026-10-04):** No `dev` branch. Every change is a new branch → squash-merge PR → prd. CF Pages auto-deploys from `prd`. See §13.
 > **Next:** No in-flight work. If Rick reports a phone-dial issue, dump the byte-level tel: first (see hub RUNBOOK §13 lesson on glyph-rendering).
 > **Blocker:** 🟢 None
-> **Last touched:** 2026-10-04 (dev → prd squash-merge `15c5bef` — visual alignment + SVG truck-signage logos + webmanifest + og-image normalization all live in production. 16 add/add conflicts resolved by taking dev's version. `npm run build` exits 0, 6 files written.)
+> **Last touched:** 2026-10-04 late (PR #13 `abb9d5e` — contact page `Call or Text → Call` + email wrapping fix, mirrored from stump PR #15 / commit `8bd18cf`. Cross-repo parity verified — `.contact-option-detail` and `.contact-option-detail--email` CSS byte-identical on all 3 repos; 0 instances of "Call or Text" remaining. Production verified live: contact-us page renders `<h3>Call</h3>` and email on one line. See hub RUNBOOK §16 cross-cutting touch list.)
 
 ## 0. In flight
 
