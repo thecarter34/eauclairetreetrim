@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /author/
+
+Sitemap: https://eauclairetreetrim.com/sitemap.xml
