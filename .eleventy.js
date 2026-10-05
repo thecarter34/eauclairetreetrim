@@ -1,9 +1,12 @@
 module.exports = function (eleventyConfig) {
   // Passthrough static assets — these are the canonical CSS/JS/images/icons/sitemap.
   // NEVER edit them. They are mirrored into _site/ on every build.
-  eleventyConfig.addPassthroughCopy("src/css");
-  eleventyConfig.addPassthroughCopy("src/js");
-  eleventyConfig.addPassthroughCopy("src/images");
+  eleventyConfig.addPassthroughCopy({
+    "src/_shared/css": "css",
+    "src/_shared/js": "js",
+    "src/_shared/images": "images",
+    "src/images": "images"
+  });
   eleventyConfig.addPassthroughCopy("favicon.png");
   eleventyConfig.addPassthroughCopy("favicon.svg");
   eleventyConfig.addPassthroughCopy("favicon.ico");
@@ -15,7 +18,7 @@ module.exports = function (eleventyConfig) {
   return {
     dir: {
       input: "src",
-      includes: "_includes",
+      includes: "_shared/_includes",
       output: "_site"
     },
     htmlTemplateEngine: "njk",
