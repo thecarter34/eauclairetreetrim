@@ -233,14 +233,14 @@ ul, ol { list-style: none; }
 .nav-link:hover { color: var(--white); background: rgba(255,255,255,0.08); }
 .nav-link.active { color: var(--brown-light); }
 .nav-cta {
-  background: var(--green-mid);
-  color: var(--white) !important;
+  background: var(--gold);
+  color: var(--navy-dark) !important;
   margin-left: 8px;
   padding: 8px 18px;
   border-radius: var(--radius-sm);
   transition: background var(--transition-fast), transform var(--transition-fast) !important;
 }
-.nav-cta:hover { background: var(--gold) !important; color: var(--navy-dark) !important; transform: translateY(-1px); }
+.nav-cta:hover { background: var(--gold-light) !important; color: var(--navy-dark) !important; transform: translateY(-1px); }
 
 /* Header Phone */
 .header-phone {
@@ -397,6 +397,18 @@ ul, ol { list-style: none; }
   padding-left: calc(var(--space-3) + 4px);
 }
 .drawer-link.active { color: var(--brown-light); }
+.drawer-link.drawer-cta {
+  justify-content: center;
+  margin: var(--space-3) var(--space-3) 0;
+  padding: 14px var(--space-3);
+  background: var(--gold);
+  color: var(--navy-dark);
+  font-weight: 700;
+  border: 0;
+  border-radius: var(--radius-sm);
+}
+.drawer-link.drawer-cta:hover,
+.drawer-link.drawer-cta:active { background: var(--gold-light); color: var(--navy-dark); padding-left: var(--space-3); }
 
 .drawer-footer {
   padding: var(--space-3);
@@ -729,6 +741,30 @@ ul, ol { list-style: none; }
   border-color: rgba(255,255,255,0.60);
 }
 
+.btn-cta {
+  background: var(--gold);
+  color: var(--navy-dark);
+  border-color: var(--gold);
+  box-shadow: 0 4px 16px var(--gold-glow);
+}
+.btn-cta:hover {
+  background: var(--gold-light);
+  border-color: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--gold-glow);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--navy);
+  border-color: var(--navy);
+}
+.btn-outline:hover {
+  background: var(--navy);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
 .btn-lg { padding: 16px 32px; font-size: 1.05rem; }
 
 /* =========================================
@@ -788,6 +824,14 @@ section { padding: var(--space-10) 0 calc(var(--space-10) * 1.25); }
 }
 @media (min-width: 1024px) {
   .services-grid--4up { grid-template-columns: repeat(4, 1fr); max-width: none; }
+}
+
+/* A lone service card spans the grid as a horizontal feature: photo left, copy right */
+.services-grid:has(> .service-card:only-child) { grid-template-columns: 1fr; }
+@media (min-width: 760px) {
+  .services-grid > .service-card:only-child { flex-direction: row; }
+  .services-grid > .service-card:only-child .service-card-media { flex: 0 0 55%; aspect-ratio: auto; min-height: 340px; }
+  .services-grid > .service-card:only-child .service-card-body { justify-content: center; padding: var(--space-6); }
 }
 
 .service-card {
@@ -995,6 +1039,29 @@ a.service-card:hover .service-card-media img { transform: scale(1.05); }
 @media (max-width: 859px) {
   .why-image-col { order: 1; }
 }
+/* Keep the photo and badges in view beside long copy instead of floating mid-column */
+@media (min-width: 860px) {
+  .why-image-col { align-self: start; position: sticky; top: 100px; }
+}
+.why-image-col .why-img { margin-bottom: var(--space-1); }
+
+/* Call-to-action box at the end of service and city page copy */
+.service-cta-box {
+  margin-top: var(--space-2);
+  padding: var(--space-4);
+  background: var(--white);
+  border-left: 4px solid var(--gold);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+.service-cta-box h3 { margin-bottom: 6px; }
+.service-cta-box p { color: var(--text-mid); }
+.service-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
 
 .why-img {
   border-radius: var(--radius-lg);
@@ -1021,6 +1088,20 @@ a.service-card:hover .service-card-media img { transform: scale(1.05); }
 }
 
 .why-content-col { display: flex; flex-direction: column; gap: var(--space-3); }
+
+/* Plain lists in service and city page copy (the global reset strips markers) */
+.why-content-col > ul:not([class]) { display: flex; flex-direction: column; gap: 10px; }
+.why-content-col > ul:not([class]) li { position: relative; padding-left: 22px; line-height: 1.6; }
+.why-content-col > ul:not([class]) li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.6em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+}
 
 /* Why-choose-us badge cards (image column callouts) */
 .why-insured-badge {
@@ -1121,6 +1202,10 @@ a.service-card:hover .service-card-media img { transform: scale(1.05); }
 }
 @media (min-width: 768px) {
   .areas-grid { grid-template-columns: repeat(3, 1fr); gap: var(--space-3); }
+}
+/* Ten areas: two even rows of five instead of 3-3-3-1 */
+@media (min-width: 1024px) {
+  .areas-grid:has(> :nth-child(10):last-child) { grid-template-columns: repeat(5, 1fr); max-width: none; }
 }
 
 .area-card {
@@ -1591,6 +1676,11 @@ a.area-card:hover {
 .trust-strip-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-3); }
 @media (min-width: 640px) { .trust-strip-grid { grid-template-columns: repeat(3, 1fr); } }
 .trust-strip-item { display: flex; align-items: center; gap: var(--space-2); justify-content: center; text-align: center; }
+/* Stacked on mobile: center the block as a whole, left-align the rows so icons share one edge */
+@media (max-width: 639px) {
+  .trust-strip-grid { width: fit-content; margin-inline: auto; }
+  .trust-strip-item { justify-content: flex-start; }
+}
 .trust-strip-item svg { flex-shrink: 0; }
 .trust-strip-item-text { display: flex; flex-direction: column; align-items: flex-start; text-align: left; }
 .trust-strip-item-label { font-weight: 700; font-size: 0.95rem; color: var(--text-dark); }
@@ -1934,6 +2024,7 @@ a.area-card:hover {
 /* page-hero-title and page-hero-subtitle: full styling for inner-page hero */
 .page-hero .page-hero-title {
   font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5.5vw, 4.5rem);
   font-weight: 900;
   line-height: 1;
   letter-spacing: -0.025em;
@@ -1943,6 +2034,8 @@ a.area-card:hover {
   text-shadow: 0 3px 0 rgba(0,0,0,0.5), 0 6px 20px rgba(0,0,0,0.7), 0 1px 4px rgba(0,0,0,0.5);
 }
 .page-hero .page-hero-subtitle {
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  max-width: 600px;
   color: rgba(255, 255, 255, 0.95);
   margin: 0;
   line-height: 1.6;
