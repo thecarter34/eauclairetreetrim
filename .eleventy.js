@@ -24,6 +24,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("site.webmanifest");
   eleventyConfig.addPassthroughCopy("src/sitemap.xml");
   eleventyConfig.addPassthroughCopy("src/robots.txt");
+  eleventyConfig.addPassthroughCopy("src/_redirects");
 
   return {
     dir: {
