@@ -2,54 +2,39 @@
   <div class="footer-inner">
     <div class="footer-brand">
       <a href="/index.html" class="footer-logo">
-        <img src="/images/logo-badge.svg" alt="Eau Claire Stump Removal" class="footer-badge" width="512" height="512" loading="lazy">
+        <img src="/images/logo-badge.svg" alt="{{ site.name }}" class="footer-badge" width="512" height="512" loading="lazy">
       </a>
-      <p class="footer-tagline">Professional stump grinding for Western Wisconsin homeowners. Stumps ground below grade, lawn ready for replanting — every call answered by Rick personally.</p>
+      <p class="footer-tagline">{{ site.footer.tagline }}</p>
       <div class="footer-contact-block">
         <a href="tel:+1-715-834-5239" class="footer-contact-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
             <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
           </svg>
-          (715) 834-5239
+          {{ site.phone }}
         </a>
         <span class="footer-contact-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
           </svg>
-          Eau Claire, WI 54701
+          {{ site.address.display }}
         </span>
       </div>
     </div>
+{% for group in site.footer.groups %}
     <div class="footer-nav-group">
-      <h4 class="footer-nav-title">Services</h4>
+      <h4 class="footer-nav-title">{{ group.title }}</h4>
       <nav>
-        <a href="/services/stump-grinding.html">Stump Grinding</a>
-        <a href="/services.html">All Services</a>
+{% for link in group.links %}
+        <a href="{{ link.href }}">{{ link.label }}</a>
+{% endfor %}
       </nav>
     </div>
-    <div class="footer-nav-group">
-      <h4 class="footer-nav-title">Service Areas</h4>
-      <nav>
-        <a href="/areas-we-serve/eau-claire-wi.html">Eau Claire</a>
-        <a href="/areas-we-serve/chippewa-falls-wi.html">Chippewa Falls</a>
-        <a href="/areas-we-serve/menomonie-wi.html">Menomonie</a>
-        <a href="/areas-we-serve.html">All Areas</a>
-      </nav>
-    </div>
-    <div class="footer-nav-group">
-      <h4 class="footer-nav-title">Company</h4>
-      <nav>
-        <a href="/index.html">Home</a>
-        <a href="/about.html">About</a>
-        <a href="/contact.html">Contact</a>
-        <a href="tel:+1-715-834-5239">Call Now</a>
-      </nav>
-    </div>
+{% endfor %}
   </div>
   <div class="footer-bottom">
-    <p>© 2026 Eau Claire Stump Removal. All rights reserved.</p>
+    <p>{{ site.footer.copyright }}</p>
   </div>
   <div class="parent-brand-footer">
-    <p>A service of <a href="https://eauclairetreeservice.com/" rel="noopener">Eau Claire Tree Service</a></p>
+    <p>A service of <a href="{{ site.footer.parentBrandUrl }}" rel="noopener">{{ site.footer.parentBrandName }}</a></p>
   </div>
 </footer>

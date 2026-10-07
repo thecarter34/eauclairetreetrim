@@ -4,7 +4,6 @@
   "url": "https://eauclairetreetrim.com",
   "phone": "(715) 834-5239",
   "phoneE164": "+1-715-834-5239",
-  "phoneTel": "tel:+1-715-834-5239",
   "email": "rickolson456@gmail.com",
   "parentBrand": {
     "name": "Eau Claire Tree Service",
@@ -24,5 +23,44 @@
     "Menomonie",
     "Mondovi",
     "Bloomer"
-  ]
+  ],
+  "nav": [
+    {"label": "Home", "href": "/index.html", "activeKey": "home"},
+    {"label": "Tree Trimming", "href": "/tree-trimming.html", "activeKey": "tree-trimming"},
+    {"label": "Tree Care", "href": "/tree-care.html", "activeKey": "tree-care"},
+    {"label": "Service Areas", "href": "/eau-claire.html", "activeKey": ""},
+    {"label": "Contact", "href": "/contact-us.html", "activeKey": "contact"},
+    {"label": "Call Now", "href": "tel:+1-715-834-5239", "activeKey": "", "isCta": true}
+  ],
+  "footer": {
+    "tagline": "Professional tree trimming and pruning for Western Wisconsin homeowners. Healthy trees, year after year — every call answered by Rick personally.",
+    "groups": [
+      {
+        "title": "Services",
+        "links": [
+          {"label": "Tree Trimming", "href": "/tree-trimming.html"},
+          {"label": "Tree Care", "href": "/tree-care.html"}
+        ]
+      },
+      {
+        "title": "Service Areas",
+        "links": [
+          {"label": "Eau Claire", "href": "/eau-claire.html"},
+          {"label": "Chippewa Falls", "href": "/chippewa-falls.html"},
+          {"label": "All Areas", "href": "/eau-claire.html"}
+        ]
+      },
+      {
+        "title": "Company",
+        "links": [
+          {"label": "Home", "href": "/index.html"},
+          {"label": "Contact", "href": "/contact-us.html"},
+          {"label": "Call Now", "href": "tel:+1-715-834-5239"}
+        ]
+      }
+    ],
+    "copyright": "© 2026 Eau Claire Tree Trimming. All rights reserved.",
+    "parentBrandName": "Eau Claire Tree Service",
+    "parentBrandUrl": "https://eauclairetreeservice.com/"
+  }
 }
