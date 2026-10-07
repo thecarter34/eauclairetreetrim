@@ -1,6 +1,6 @@
 # `eauclairetreetrim.com` — Tree Trimming Microsite (Runbook)
 
-> **Status:** Maintenance (11ty migration **COMPLETE**; architecture unified; contact page unified to canonical template; **LIVE on prd**. Contact fix `Call or Text → Call` + email wrapping shipped 2026-10-04 via PR #13 `abb9d5e`.)
+> **Status:** Maintenance (per-site data-driven nav shipped 2026-10-07 via PR #19. Shared header/footer now driven by `site.nav` + `site.footer` from `_data/site.json`.)
 > **Why:** Josh-managed spoke 4 of the Eau Claire Tree Service hub-and-spoke. Owns the **tree trimming, tree pruning, tree care, arborist pruning, tree disease treatment** keyword bucket. Static HTML on Cloudflare Pages — built Aug 2026. **Also the canonical CSS/JS source of truth for the entire microsite family.**
 > **Engine:** claude_code (no active workstream — 11ty migration shipped, contact fix mirrored from stump PR #15)
 > **Workflow (locked 2026-10-04):** No `dev` branch. Every change is a new branch → squash-merge PR → prd. CF Pages auto-deploys from `prd`. See §13.
