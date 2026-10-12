@@ -1,30 +1,32 @@
 # Cloudflare Pages redirects for eauclairetreetrim.com
-# 410 = Gone — search engines de-index promptly
+# 410 status is NOT supported by CF Pages _redirects (only 301/302/303/307/308).
+# 301 to the sister site = same SEO effect: Google de-indexes the source URL.
+# Sister sites per hub RUNBOOK.md §4: removal+land+lot+emergency live on
+# eauclairetreeremovals.com, stump grinding on eauclairetree.com.
 
-# Out-of-scope service pages: these leaked from a prior shared template
-# bug. They belong on sister microsites (eauclairetreeremovals.com or
-# eauclairetree.com), not on trim. Return 410.
-/tree-removal                /  410
-/tree-removal.html           /  410
-/tree-removal/               /  410
-/land-clearing               /  410
-/land-clearing.html          /  410
-/land-clearing/              /  410
-/lot-clearing                /  410
-/lot-clearing.html           /  410
-/lot-clearing/               /  410
-/services/stump-grinding     /  410
-/services/stump-grinding.html / 410
-/services/stump-grinding/    /  410
+# Out-of-scope service pages: leak from prior shared template. These belong
+# on sister microsites, not on trim. 301 to the canonical sister URL.
+/tree-removal            https://eauclairetreeremovals.com/tree-removal    301
+/tree-removal.html       https://eauclairetreeremovals.com/tree-removal    301
+/tree-removal/           https://eauclairetreeremovals.com/tree-removal    301
+/land-clearing           https://eauclairetreeremovals.com/land-clearing   301
+/land-clearing.html      https://eauclairetreeremovals.com/land-clearing   301
+/land-clearing/          https://eauclairetreeremovals.com/land-clearing   301
+/lot-clearing            https://eauclairetreeremovals.com/lot-clearing    301
+/lot-clearing.html       https://eauclairetreeremovals.com/lot-clearing    301
+/lot-clearing/           https://eauclairetreeremovals.com/lot-clearing    301
+/services/stump-grinding https://eauclairetree.com/services/stump-grinding  301
+/services/stump-grinding.html https://eauclairetree.com/services/stump-grinding  301
+/services/stump-grinding/     https://eauclairetree.com/services/stump-grinding  301
 
-# Generic nav pages that the per-site nav refactor (PR #19) retired
-# but the URLs are still being served from a stale build. 410.
-/services                    /  410
-/services.html               /  410
-/services/                   /  410
-/areas-we-serve              /  410
-/areas-we-serve.html         /  410
-/areas-we-serve/             /  410
-/about                       /  410
-/about.html                  /  410
-/about/                      /  410
+# Generic nav pages that the per-site nav refactor (PR #19) retired.
+# No sister equivalent — redirect to trim homepage.
+/services                /     301
+/services.html           /     301
+/services/               /     301
+/areas-we-serve          /     301
+/areas-we-serve.html     /     301
+/areas-we-serve/         /     301
+/about                   /     301
+/about.html              /     301
+/about/                  /     301
