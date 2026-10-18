@@ -41,3 +41,17 @@
 /tree-care.html          /tree-care              301
 /eau-claire.html         /eau-claire             301
 /chippewa-falls.html     /chippewa-falls         301
+
+# Legacy directory-index patterns: /foo/ → /foo (301 redirect to clean URL).
+# The extensionless canonical is what `base.njk` derives the canonical link
+# from (site.url + (page.url | replace(".html", ""))). Without these, CF
+# Pages' default trailing-slash handler emits a 308 instead of our explicit
+# 301 — Google treats 308 vs 301 the same for ranking consolidation, but the
+# 301 is what the prior sister-site SEO audit suggested as the convention
+# across the 3 microsites (removals hub already uses 301). Matches the
+# sister-site §16 cross-cutting touch list.
+/contact-us/         /contact-us             301
+/tree-trimming/      /tree-trimming          301
+/tree-care/          /tree-care              301
+/eau-claire/         /eau-claire             301
+/chipwa-falls/       /chipwa-falls           301
