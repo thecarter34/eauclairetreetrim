@@ -30,3 +30,14 @@
 /about                   /     301
 /about.html              /     301
 /about/                  /     301
+
+# .html → extensionless 301 for every canonical trim page. Same rationale
+# as removals: the extensionless URL is what `base.njk` derives the canonical
+# link from (site.url + (page.url | replace(".html", ""))). A site: search
+# 2026-10-17 confirmed Google has indexed several .html variants, fragmenting
+# signals between the two URL forms.
+/contact-us.html         /contact-us             301
+/tree-trimming.html      /tree-trimming          301
+/tree-care.html          /tree-care              301
+/eau-claire.html         /eau-claire             301
+/chippewa-falls.html     /chippewa-falls         301
