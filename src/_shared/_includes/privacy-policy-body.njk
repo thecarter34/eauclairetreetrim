@@ -1,0 +1,110 @@
+{#-
+  SHARED legal-page body — Privacy Policy.
+
+  Canonical source: eau_claire_tree/src/_shared/_includes/privacy-policy-body.njk
+  This file is part of the shared design system and MUST stay byte-identical
+  across all 3 Rick-Olson microsite repos (stump / trim / removals).
+
+  DO NOT use ~/.hermes/scripts/sync-shared.sh for this file — that script
+  rsyncs the whole _shared/ tree with --delete, which would clobber the
+  removals-specific canonical fix in eau_claire_tree_removals'
+  src/_shared/_includes/base.njk. Copy this file into each sister repo
+  individually instead (see hub RUNBOOK.md §18).
+
+  Context available (passed in from the calling page's front matter):
+    site.name                    per-site brand name
+    site.footer.parentBrandName  "Eau Claire Tree Service"
+    site.footer.parentBrandUrl   parent site URL
+    site.phone / site.phoneE164
+    site.email
+    site.address.display
+    legalScope        front matter — the services this site covers
+    legalUpdated      front matter — human-readable "Last updated" date
+
+  CONTENT RULE: every statement below was verified against the live sites
+  on 2026-10-27. The three microsites have NO contact forms, NO analytics,
+  NO tracking cookies, NO ad pixels, NO chat widgets, NO iframes, and NO
+  payment integrations. The only outside asset load is Google Fonts; the
+  only host is Cloudflare Pages. If any of that ever changes, update this
+  file in all 3 repos on the same day — a privacy policy that lies is
+  worse than no privacy policy.
+-#}
+
+<section class="legal-hero">
+  <div class="section-container">
+    <div class="legal-hero-inner">
+      <span class="legal-eyebrow">Legal</span>
+      <h1 class="legal-title">Privacy Policy</h1>
+      <p class="legal-lede">{{ site.name }} is a plain local-business site. This page explains what we do with the information you choose to share with us — in plain English, not legalese.</p>
+      <p class="legal-updated">Last updated: {{ legalUpdated }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="legal-section">
+  <div class="section-container">
+    <div class="legal-content">
+
+      <h2>Who We Are</h2>
+
+      <p>{{ site.name }} is a site operated by {{ site.footer.parentBrandName }}, the tree service business of Rick Olson. We work out of Eau Claire, Wisconsin, and serve homeowners across Eau Claire County and the surrounding area. This site covers {{ legalScope }}.</p>
+
+      <p>{{ site.footer.parentBrandName }} also runs our main website at <a href="{{ site.footer.parentBrandUrl }}">eauclairetreeservice.com</a>. If you reach us through that site instead of this one, the same phone number and email below get you to the same person.</p>
+
+      <h2>The Short Version</h2>
+
+      <p>This site does not collect personal information. There are no contact forms, no accounts, no newsletter sign-up, and no tracking of any kind. We don't use advertising cookies or analytics, and we don't sell or trade information about visitors. The only information we hold is what you choose to tell us by phone or email.</p>
+
+      <h2>What We Collect, and When</h2>
+
+      <p>We collect nothing from your visit to this site. These pages don't run analytics scripts, don't set tracking cookies, and don't contain embedded forms, maps, chat widgets, or advertising pixels. Nothing about you gets written down just because you loaded a page.</p>
+
+      <p>When you call {{ site.phone }} or email {{ site.email }}, we receive whatever you decide to tell us — usually your name, your phone number or email address, the address of the property where you want work done, and a description of the job. We use it to answer you, give you an estimate, schedule the work, and send an invoice.</p>
+
+      <p>Payment is arranged directly with us. We don't take card or bank details through this website.</p>
+
+      <h2>Who Else Sees It</h2>
+
+      <p>We don't sell, rent, or trade your information. We share it only with the people and services that help us do the work and run the business:</p>
+
+      <ul>
+        <li><strong>Our host.</strong> This site runs on Cloudflare Pages, which processes technical connection data — such as your IP address and browser — in order to deliver the page and keep the site running.</li>
+        <li><strong>Google Fonts.</strong> The fonts on this site are served by Google, so Google's servers see your IP address when the page loads. It's the only outside service we load anything from.</li>
+        <li><strong>Our email provider.</strong> Our contact address is a Gmail address, so Google handles the mail you send us.</li>
+        <li><strong>People who help us carry out the work.</strong> If a crew or a contractor works your property, they need to know where to go and what the job is.</li>
+        <li><strong>Service providers we use to run the business.</strong> An accountant or an insurer may need job and invoice details to do their job for us.</li>
+        <li><strong>Google Business Profile.</strong> If you leave a review on our Google Business Profile listing, that is handled by Google under its own privacy policy, not this one.</li>
+      </ul>
+
+      <p>We also disclose information when we're legally required to — for example, in response to a court order or to comply with a lawful request.</p>
+
+      <h2>How Long We Keep It</h2>
+
+      <p>We keep the information you give us for as long as we need it: to finish the job, to answer follow-up questions, and to keep the business and tax records we're required to keep. We don't run a marketing list, so there's no reason for us to hold your details to send you offers.</p>
+
+      <p>You can ask us to delete what we hold about you at any time. We'll do that, except for records we're legally required to keep.</p>
+
+      <h2>Your Choices</h2>
+
+      <p>You can ask us what information we hold about you, ask us to correct it, or ask us to delete it. Call {{ site.phone }} or email {{ site.email }} and Rick will handle it. We don't sell your information, so there is no opt-out to complete, and we don't follow you around other websites.</p>
+
+      <h2>Children's Privacy</h2>
+
+      <p>This site is for adults arranging tree work on their property. We don't knowingly collect personal information from children. If you believe a child has sent us information, contact us and we'll delete it.</p>
+
+      <h2>Changes to This Policy</h2>
+
+      <p>If we change how we handle information, we'll update the date at the top of this page. The version you're reading now is the one that applies.</p>
+
+      <h2>Contact Us</h2>
+
+      <div class="legal-contact-box">
+        <p><strong>{{ site.footer.parentBrandName }}</strong> — {{ site.name }}</p>
+        <p>Phone: <a href="tel:{{ site.phoneE164 }}">{{ site.phone }}</a></p>
+        <p>Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+        <p>{{ site.address.display }}</p>
+      </div>
+
+    </div>
+  </div>
+</section>
